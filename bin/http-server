@@ -20,6 +20,7 @@ if (argv.h || argv.help) {
     'options:',
     '  -p           Port to use [8080]',
     '  -a           Address to use [0.0.0.0]',
+    '  -b           Base path [/]',
     '  -d           Show directory listings [true]',
     '  -i           Display autoIndex [true]',
     '  -g --gzip    Serve gzip files when possible [false]',
@@ -94,6 +95,7 @@ else {
 
 function listen(port) {
   var options = {
+    baseDir: argv.b,
     root: argv._[0],
     cache: argv.c,
     showDir: argv.d,
